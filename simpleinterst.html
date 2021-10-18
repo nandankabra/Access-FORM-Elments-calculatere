@@ -1,0 +1,59 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access FORM Elments</title>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <h1> 
+            How to calculate Simple interest 
+        </h1>
+        <form onsubmit="return calculateSimpleinterest()">
+            <input id="n1"  type="text" name="num1" placeholder="initial principal balance">
+            <input data-n2="n2" type="text" name="num2" placeholder="annual interest rate">
+            <input data-n2="n3" type="text" name="num3" placeholder="time (in years) ">
+            <input type="submit" value="Submit">
+        </form>
+        <hr>
+        <button>
+            <a href="areaofCircle.html"> Next Page  </a>
+        </button>
+        
+
+        <script>
+           //Alway load jS at the bottom to apear your website is loading faster 
+            
+           //1. function defination
+           function calculateSimpleinterest(e){ // formal paramter/arguments
+               //Function body
+               //
+               let number1 = document.getElementById('n1').value;
+               var number2 = document.querySelector('[data-n2="n2"]').value;
+               var number3 = document.querySelector('[data-n2="n3"]').value;
+               alert('initial principal balance ' + number1);
+               alert('annual interest rate ' + number2);
+               alert('time (in years) ' + number3);
+              
+
+               let result = (parseInt(number1) * parseInt(number2) * parseInt(number3));
+
+               alert( ' Simple interest  '+ result);
+
+               //Now save this result in local storage so that we can access later
+
+               //object.method();
+               localStorage.setItem('result',result); // we are passing two actual argument are string argument
+
+               //A function may return something
+               return false;
+           }
+        </script>
+    </body>
+</html>
+
