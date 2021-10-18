@@ -1,0 +1,50 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access FORM Elments</title>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <h1>area of circle</h1>
+        <form onsubmit="return Aoc()">
+            <input id="n1"  type="text" name="num1" value="3.14">
+            <input data-n2="n2" type="text" name="num2" placeholder="Enter the value2">
+            <input type="submit" value="Submit">
+        </form>
+            
+
+        <script>
+           //Alway load jS at the bottom to apear your website is loading faster 
+            
+           //1. function defination
+           function Aoc(c){ // formal paramter/arguments
+               //Function body
+               //
+               const number1 = document.getElementById('n1').value;
+               var number2 = document.querySelector('[data-n2="n2"]').value;
+               alert('pip value ' + number1);
+               alert('Radius ' + number2);
+              
+
+               let result = parseInt(number1) * (parseInt(number2)*parseInt(number2));
+
+               alert("area of circle "+ result);
+
+               //Now save this result in local storage so that we can access later
+
+               //object.method();
+               localStorage.setItem('result',result); // we are passing two actual argument are string argument
+
+               //A function may return something
+               return false;
+           }
+        </script>
+    </body>
+</html>
+
